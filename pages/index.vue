@@ -18,20 +18,20 @@ export default {
       // Add new column into allCoumns array
       this.allColumns.push(
         <div
-          class="resizable"
+          class="grid-item"
           id={this.totalCol}
           draggable="true"
           onDrag={this.onDragStart}
         >
           <b-icon
-            class="trash-icon"
-            icon="trash"
-            onClick={this.deleteDiv}
+            class="arrows-move-icon"
+            icon="arrows-move"
             id={index}
           ></b-icon>
           <b-icon
-            class="arrows-move-icon"
-            icon="arrows-move"
+            class="trash-icon"
+            icon="trash"
+            onClick={this.deleteDiv}
             id={index}
           ></b-icon>
         </div>
@@ -67,7 +67,7 @@ export default {
   },
   render(h) {
     return (
-      <div class="container" onDragover={this.onDragOver} onDrop={this.onDrop}>
+      <div class="grid-container" onDragover={this.onDragOver} onDrop={this.onDrop}>
         <b-icon class="chevron-up-icon" icon="chevron-up"></b-icon>
         <b-icon class="chevron-down-icon" icon="chevron-down"></b-icon>
         <b-icon class="add-top-icon" icon="plus-circle-fill"></b-icon>
