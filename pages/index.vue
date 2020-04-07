@@ -9,6 +9,51 @@ export default {
   data() {
     return { lines: [0], totalCol: 0, allDiv: [], dragElementId: "" };
   },
+  methods: {
+    addColumn() {
+      let index = this.totalCol++;
+      this.allDiv.push(
+        <div
+          class="resizable"
+          id={index}
+          draggable="true"
+          onDrag={this.onDragStart}
+        >
+          <b-icon
+            class="trash-icon"
+            icon="trash"
+            onClick={this.deleteDiv}
+            id={index}
+          ></b-icon>
+          <b-icon
+            class="arrows-move-icon"
+            icon="arrows-move"
+            id={index}
+          ></b-icon>
+        </div>
+      );
+    },
+    onDragStart(event) {
+      this.dragElementId = event.target.id;
+    },
+    onDragOver(event) {
+      event.preventDefault();
+    },
+    onDrop(event) {
+      const draggableElement = document.getElementById(this.dragElementId);
+      this.setTranslate(event.offsetX, event.offsetY, draggableElement);
+    },
+    setTranslate(xPos, yPos, el) {
+      el.style.position = "fixed";
+      el.style.left = xPos + "px";
+      el.style.top = yPos + "px";
+    },
+    deleteDiv(ele) {
+      let id = Number(ele.currentTarget.id);
+      let index = this.allDiv.findIndex((x) => x.data.attrs.id === id);
+      this.allDiv.splice(index, 1);
+    },
+  },
   render(h) {
     return (
       <div class="container" onDragover={this.onDragOver} onDrop={this.onDrop}>
