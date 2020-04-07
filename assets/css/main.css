@@ -1,11 +1,13 @@
-.container {
+.grid-container {
     border: 1px solid #ddd;
-    height: 50vh;
-    display: -webkit-box;
+    height: 100%;
+    min-height: 50vh;
     position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-.resizable {
+.grid-item {
     position: fixed;
     left: 35px;
     top: 35px;
