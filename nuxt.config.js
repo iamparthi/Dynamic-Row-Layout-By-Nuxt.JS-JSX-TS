@@ -7,6 +7,7 @@ export default {
       ]
     },
     css: [
+      '~/assets/css/main.css'
     ],
     build: {
       assetsPublicPath: '/',

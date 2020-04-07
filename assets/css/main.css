@@ -1,0 +1,70 @@
+.container {
+    border: 1px solid #ddd;
+    height: 50vh;
+    display: -webkit-box;
+    position: relative;
+}
+
+.resizable {
+    position: fixed;
+    left: 35px;
+    top: 35px;
+    resize: both;
+    overflow: auto;
+    border: 1px solid #ddd;
+    width: 20%;
+    height: 30vh;
+}
+
+.resizable:hover .display {
+    display: inline;
+}
+
+.plus-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.trash-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.arrows-move-icon {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    cursor: move;
+}
+
+.add-top-icon {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+}
+
+.add-bottom-icon {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+}
+
+.settings-icon {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.chevron-up-icon {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.chevron-down-icon {
+    position: absolute;
+    left: 20px;
+    top: 5px;
+}
